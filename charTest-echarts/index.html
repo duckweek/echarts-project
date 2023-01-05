@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="bar-chart">
+            <h2>柱状图示例</h2>
+            <div class="chart" id="bar-chart"></div>
+        </div>
+        <div class="line-chart">
+            <h2>折线图示例</h2>
+            <div class="chart" id="line-chart"></div>
+        </div>
+        <div class="area-chart">
+            <h2>面积图示例</h2>
+            <div class="chart" id="area-chart"></div>
+        </div>
+        <div class="pie-chart">
+            <h2>饼图示例</h2>
+            <div class="chart">
+                <ul>
+                    <li id="pie-one"></li>
+                    <li id="pie-two"></li>
+                    <li id="pie-three"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <script src="./data.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

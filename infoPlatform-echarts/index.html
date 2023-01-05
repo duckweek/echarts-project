@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灌区信息化平台</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./icons/iconfont.css">
+</head>
+<body>
+        <!-- 标题 -->
+        <h1>灌区信息化平台</h1>
+        <section>
+            <!-- 左边信息看板 -->
+            <main>
+                <!-- 信息卡片 -->
+                <div class="info-cards">
+                    <!-- 气象指标卡片 -->
+                    <div class="atmosphere-card">
+                        <h2>气象指标</h2>
+                        <div class="content">
+                            <!-- 左边天气情况 -->
+                            <div class="weather-wrapper">
+                                <div class="weather">
+                                    <i class="iconfont icon-duoyun"></i>
+                                    <div class="temp">
+                                        <div class="num" id="temp-today">20℃</div>
+                                        <div class="desc" id="weather-today">晴天</div>
+                                    </div>
+                                </div>
+                                <div class="tommorow" id="temp-tomorrow">明天 24℃</div>
+                                <div class="nextday" id="temp-after-tommorow">后天 24℃</div>
+                            </div>
+                            <!-- 右边其他详情信息 -->
+                            <div class="detail">
+                                <ul>
+                                    <li>
+                                        <i class="iconfont icon-a-PM25_mian"></i>
+                                        <div class="temp">
+                                            <div class="num" id="pm25">120</div>
+                                            <div class="desc">pm2.5</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="iconfont icon-wenshidu"></i>
+                                        <div class="temp">
+                                            <div class="num">86%</div>
+                                            <div class="desc">温度</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <i class="iconfont icon-guangzhaoqiangdu"></i>
+                                        <div class="temp">
+                                            <div class="num" id="light-intensity">1016 KLUX</div>
+                                            <div class="desc">光照强度</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="iconfont icon-qiya"></i>
+                                        <div class="temp">
+                                            <div class="num">1020 Pa</div>
+                                            <div class="desc">气压</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 设备浇灌卡片 -->
+                    <div class="device-card">
+                        <h2>设备浇灌</h2>
+                        <div class="content">
+                            <div class="device-wrapper">
+                                <ul id="device-nums">
+                                    <!-- <li>
+                                        <div class="device-name">1号设备</div>
+                                        <i class="iconfont icon-guangai"></i>
+                                        <div class="device-status">灌溉中</div>
+                                    </li> -->
+                                    <!-- <li>
+                                        <div class="device-name">2号设备</div>
+                                        <i class="iconfont icon-guangai"></i>
+                                        <div class="device-status">灌溉中</div>
+                                    </li> -->
+                                    <!-- <li>
+                                        <div class="device-name">3号设备</div>
+                                        <i class="iconfont icon-guangai"></i>
+                                        <div class="device-status">灌溉中</div>
+                                    </li>
+                                    <li>
+                                        <div class="device-name">4号设备</div>
+                                        <i class="iconfont icon-guangai"></i>
+                                        <div class="device-status">灌溉中</div>
+                                    </li>
+                                    <li>
+                                        <div class="device-name">5号设备</div>
+                                        <i class="iconfont icon-guangai"></i>
+                                        <div class="device-status">灌溉中</div>
+                                    </li>
+                                    <li>
+                                        <div class="device-name">6号设备</div>
+                                        <i class="iconfont icon-guangai"></i>
+                                        <div class="device-status">灌溉中</div>
+                                    </li> -->
+                                    
+                                </ul>
+                            </div>
+                            <!-- <h3>设备状态占比</h3> -->
+                            
+                            <div class="device-status-rate-wrapper" id="device-rate-chart">设备状态占比</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- 空气信息 -->
+                <div class="air-info" id="airTemperature"></div>
+                <!-- 土壤信息 -->
+                <div class="soil-info">
+                    <div class="soil-moisture">
+                        <h2>土壤墒情</h2>
+                        <ul>
+                            <li>
+                                <i class="iconfont icon-turangwendu"></i>
+                                <div class="num" id="soil-temprature">27</div>
+                                <div class="desc">土壤温度</div>
+                            </li>
+                            <li>
+                                <i class="iconfont icon-turangshidu"></i>
+                                <div class="num" id="soil-humidity">27</div>
+                                <div class="desc">土壤湿度</div>
+                            </li>
+                            <li>
+                                <i class="iconfont icon-shandianfahuo"></i>
+                                <div class="num" id="soil-conductivity">27</div>
+                                <div class="desc">土壤导电率</div>
+                            </li>
+                            <li>
+                                <i class="iconfont icon-suanjiandu"></i>
+                                <div class="num" id="soil-ph">27</div>
+                                <div class="desc">土壤酸碱度</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="soil-temporary" id="soil-temperature"></div>
+                </div>
+            </main>
+            <!-- 右边消息看板 -->
+            <aside>
+                <div class="msg-tips">
+                    <!-- 消息提醒 -->
+                    <div class="msg-header">
+                        <div class="title">消息提醒</div>
+                        <nav>
+                            <ul>
+                                <li class="msg-tab active" type='all'>全部</li>
+                                <li class="msg-tab" type="danger">报警</li>
+                                <li class="msg-tab" type="warning">警告</li>
+                                <li class="msg-tab" type="other">其他</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- 消息内容 -->
+                    <div class="msg-content">
+                        <div class="msg-wrapper">
+                            <ul id="msg-tip-list">
+                                <!-- <li>
+                                    <i class="iconfont icon-jingbao"></i>
+                                    <div class="msg-info">
+                                        <div class="msg-info-hd">
+                                            <div class="info-type">报警信息</div>
+                                            <div class="info-time">2018-12-24 12:00</div>
+                                        </div>
+                                        <div class="msg-info-content">1h号设计的饭卡上反思jjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjj</div>
+                                    </div>
+                                </li>
+    
+                                <li>
+                                    <i class="iconfont icon-jingbao"></i>
+                                    <div class="msg-info">
+                                        <div class="msg-info-hd">
+                                            <div class="info-type">报警信息</div>
+                                            <div class="info-time">2018-12-24 12:00</div>
+                                        </div>
+                                        <div class="msg-info-content">1h号设计的饭卡上反思jjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjj</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="iconfont icon-jingbao"></i>
+                                    <div class="msg-info">
+                                        <div class="msg-info-hd">
+                                            <div class="info-type">报警信息</div>
+                                            <div class="info-time">2018-12-24 12:00</div>
+                                        </div>
+                                        <div class="msg-info-content">1h号设计的饭卡上反思jjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjj</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="iconfont icon-jingbao"></i>
+                                    <div class="msg-info">
+                                        <div class="msg-info-hd">
+                                            <div class="info-type">报警信息</div>
+                                            <div class="info-time">2018-12-24 12:00</div>
+                                        </div>
+                                        <div class="msg-info-content">1h号设计的饭卡上反思jjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjj</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="iconfont icon-jingbao"></i>
+                                    <div class="msg-info">
+                                        <div class="msg-info-hd">
+                                            <div class="info-type">报警信息</div>
+                                            <div class="info-time">2018-12-24 12:00</div>
+                                        </div>
+                                        <div class="msg-info-content">1h号设计的饭卡上反思jjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjj</div>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                <h2>消息占比</h2>
+                <div class="msg-rate">
+                    <!-- 报警消息占比 -->
+                    <div class="msg-danger">
+                        <h3>报警消息占比</h3>
+                        <div class="msg-danger-chart" id="msg-danger-chart">试试</div>
+                        <ul>
+                            <li>
+                                <div class="num"><span id="danger-done">1</span>个</div>
+                                <div class="status">已处理</div>
+                            </li>
+                            <li>
+                                <div class="num"><span id="danger-undo">6</span>个</div>
+                                <div class="status">未处理</div>
+                            </li>
+                            <li>
+                                <div class="num"><span id="danger-total">10</span>个</div>
+                                <div class="status">总个数</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="msg-warning">
+                        <h3>警告消息占比</h3>
+                        <div class="msg-warning-chart" id="msg-warning-chart">试试</div>
+                        <ul>
+                            <li>
+                                <div class="num"><span id="warning-done"></span>个</div>
+                                <div class="status">已处理</div>
+                            </li>
+                            <li>
+                                <div class="num"><span id="warning-undo">4</span>个</div>
+                                <div class="status">未处理</div>
+                            </li>
+                            <li>
+                                <div class="num"><span id="warning-total">3</span>个</div>
+                                <div class="status">总个数</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="msg-info">
+                        <h3>其他消息占比</h3>
+                        <div class="msg-info-chart" id="msg-info-chart">试试</div>
+                        <ul>
+                            <li>
+                                <div class="num"><span id="info-done">1</span>个</div>
+                                <div class="status">已处理</div>
+                            </li>
+                            <li>
+                                <div class="num"><span id="info-undo">6</span>个</div>
+                                <div class="status">未处理</div>
+                            </li>
+                            <li>
+                                <div class="num"><span id="info-total">10</span>个</div>
+                                <div class="status">总个数</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+        <script src="./data.js"></script>
+        <script src="./index.js"></script>
+</body>
+</html>

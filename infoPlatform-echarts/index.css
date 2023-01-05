@@ -1,0 +1,413 @@
+body,
+h1,
+h2,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    color: #eee;
+    background-color: #2a305c;
+    padding: 0 16px 8px;
+    font-size: 12px;
+}
+
+
+/* 标题 */
+h1 {
+    color: #fff;
+    padding: 8px 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 12px;
+}
+
+/* 主要内容 */
+section {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 68px);
+}
+
+/* 左边信息看板 */
+main {
+    display: flex;
+    flex-direction: column;
+    width: 76%;
+}
+
+/* 左边信息看板 >>> 信息卡片 */
+.info-cards {
+    height: 124px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 左边信息看板 >>> 信息卡片 >>> 气象指标卡片 & 设备卡片*/
+.info-cards .atmosphere-card,
+.info-cards .device-card {
+    flex: 1;
+    padding: 4px;
+    background-color:  rgba(33, 40, 80);
+}
+
+.info-cards .atmosphere-card {
+    margin-right: 16px;
+}
+
+.info-cards .atmosphere-card .content {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.info-cards .atmosphere-card .content .weather-wrapper .weather {
+    display: flex; 
+    margin-bottom: 16px;
+}
+
+.info-cards .atmosphere-card .content .weather-wrapper .weather i,
+.info-cards .atmosphere-card .content .detail ul li i {
+    margin-right: 8px;
+    padding-top: 4px;
+}
+
+.info-cards .atmosphere-card .content .weather-wrapper .tommorow,
+.info-cards .atmosphere-card .content .weather-wrapper .nextday {
+    font-size: 12px;
+}
+
+.info-cards .atmosphere-card .content .weather-wrapper .num {
+    font-size: 24px;
+}
+
+.info-cards .atmosphere-card .content .weather-wrapper .desc {
+    font-size: 12px;
+}
+
+.info-cards .atmosphere-card .content .detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-cards .atmosphere-card .content .detail ul {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 17px);
+    padding-bottom: 8px;
+}
+
+.info-cards .atmosphere-card .content .detail ul li {
+    list-style: none;
+    display: flex; 
+}
+
+.info-cards .atmosphere-card .content .detail ul li .num {
+    font-size: 20px;
+
+}
+
+.info-cards .atmosphere-card .content .detail ul li .desc {
+    font-size: 12px;
+}
+
+/* 左边信息看板 >>> 设备浇灌卡片 */
+.info-cards .device-card .content {
+    height: 107px;
+    display: flex;
+}
+.info-cards .device-card .content .device-wrapper {
+    width: 55%;
+    line-height: 24px;
+    height: 96px;
+    overflow: auto;
+    padding: 0 8px;
+}
+
+.info-cards .device-card .content .device-wrapper ul {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.device-card .content .device-status-rate-wrapper {
+    position: relative;
+    width: 45%;
+    height: 100%;
+}
+
+.device-card .content .device-status-rate-wrapper #device-rate-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.device-card .content .working {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    z-index: 999;
+}
+
+.info-cards .device-card li{
+    display: inline-block;
+    /* padding: 4px; */
+    margin-right: 4px;
+    display: flex;
+}
+
+.device-working {
+    color: skyblue;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    /* 纵向滚动条  宽度生效 */
+    width: 5px;
+    /* 横向滚动条 高度生效 */
+    height: 8px;
+    background-color: transparent;
+}
+/* 滑块 */
+::-webkit-scrollbar-thumb {
+    background-color: #7279af;
+    border-radius: 3px;
+}
+
+.info-cards .device-card li .device-name {
+    margin-right: 4px;
+}
+
+/* 空气 */
+.air-info {
+    margin-top: 16px;
+    width: 100%;
+    flex: 2;
+}
+
+/* 土壤 */
+.soil-info {
+    flex: 1;
+    display: flex;
+}
+
+/* 土壤墒情 */
+.soil-info .soil-moisture {
+    width: 40%;
+    /* background-color: red; */
+}
+
+.soil-info .soil-moisture ul {
+    display: flex;
+    height: 134px;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.soil-info .soil-moisture li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8px;
+    list-style: none;
+    font-family: '微软雅黑';
+    background-color: rgb(133, 141, 247, .1)
+}
+
+.soil-info .soil-moisture li i {
+    font-size: 32px;
+}
+.soil-info .soil-moisture li .num {
+    font-size: 20px;
+}
+
+.soil-info .soil-moisture li .desc {
+    font-size: 12px;
+}
+
+/* 土壤湿度 */
+.soil-info .soil-temporary {
+    width: 60%;
+    height: 100%;
+}
+
+/* .soil-temporary {
+    background-color: pink;
+} */
+
+/* 右边信息看板 */
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    /* color: #1e2770; */
+    /* background-color: #111; */
+}  
+
+.msg-tips {
+    width: 100%;
+    flex: 1;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* color: #0c1138; */
+}
+
+.msg-tips .msg-header {
+    height: 50px;
+    padding: 8px 16px;
+    font-size: 12px;
+    background-color: rgb(133, 141, 247, .1);
+}
+
+.msg-tips .msg-header nav ul {
+    margin-top: 8px;
+    display: flex;
+
+}
+
+.msg-tips .msg-header nav li {
+    list-style: none;
+    margin-right: 16px;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    /* background-color: red; */
+    border-radius: 99px;
+}
+
+.msg-tips .msg-header nav li:hover {
+    background-color: rgba(33, 40, 80);
+    color: #eee;
+}
+
+.active {
+    background-color: rgba(33, 40, 80);
+    color: #eee;
+}
+
+.msg-tips .msg-content {
+    height: 260px;
+    overflow: hidden;
+}
+
+.msg-tips .msg-content .msg-wrapper {
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, .02);
+    width: 100%;
+    height: 100%;
+}
+
+.msg-tips .msg-content .msg-wrapper::-webkit-scrollbar {
+    background-color: rgba(33, 40, 80);
+    border-radius: 3px;
+}
+
+.msg-tips .msg-content ul li{
+    display: flex;
+    list-style: none;
+    padding: 4px 8px;
+}
+
+.msg-tips .msg-content ul li i {
+    padding-top: 4px;
+    margin-right: 4px;
+}
+
+.dangerColor {
+    color: red;
+}
+
+.warningColor {
+    color: yellow;
+}
+
+.infoColor {
+    color: skyblue;
+}
+
+.msg-tips .msg-content ul li .msg-info {
+    flex: 1;
+}
+
+.msg-tips .msg-content ul li .msg-info .msg-info-content {
+    word-break: break-all;
+}
+
+
+.msg-tips .msg-content ul li .msg-info-hd {
+    display: flex;
+    justify-content: space-between;
+}
+
+.msg-tips .msg-content ul li .msg-info-hd .info-type{
+    flex: 1;
+}
+
+.msg-rate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0 4px;
+    width: 100%;
+    height: 260px;
+    /* background-color: #666; */
+}
+
+.msg-rate .msg-danger,
+.msg-rate .msg-warning,
+.msg-rate .msg-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: rgb(133, 141, 247, .1);
+    box-sizing: border-box;
+}
+
+.msg-rate .msg-danger h3,
+.msg-rate .msg-warning h3,
+.msg-rate .msg-info h3 {
+    width: 50px;
+    font-size: 12px;
+}
+
+.msg-rate .msg-danger .msg-danger-chart,
+.msg-rate .msg-warning .msg-warning-chart,
+.msg-rate .msg-info .msg-info-chart {
+    width: 60px;
+    height: 100%;
+    /* background-color: #666; */
+}
+
+.msg-rate ul {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.msg-rate ul li {
+    list-style: none;
+    font-size: 10px;
+    padding: 0 8px;
+}
+
+.msg-rate ul li span {
+    font-size: 16px;
+    margin-right: 4px;
+}
